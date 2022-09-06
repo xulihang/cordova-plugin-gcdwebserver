@@ -1,0 +1,25 @@
+{
+  "name": "cordova-plugin-gcdwebserver",
+  "version": "0.0.1",
+  "description": "Cordova plugin for GCDWebServer",
+  "cordova": {
+    "id": "cordova-plugin-gcdwebserver",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xulihang/cordova-plugin-gcdwebserver.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "author": "Lihang Xu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xulihang/cordova-plugin-gcdwebserver/issues"
+  },
+  "homepage": "https://github.com/xulihang/cordova-plugin-gcdwebserver#readme"
+}
