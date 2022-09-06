@@ -6,11 +6,11 @@
 </js-module>
 <platform name="ios">
     <config-file parent="/*" target="config.xml">
-        <feature name="GCDWebServer">
-        <param name="ios-package" value="GCDWebServer" />
+        <feature name="CDVGCDWebServer">
+        <param name="ios-package" value="CDVGCDWebServer" />
         </feature>
     </config-file>
-    <source-file src="src/ios/GCDWebServer.m" />
+    <source-file src="src/ios/CDVGCDWebServer.m" />
     <podspec>
         <pods use-frameworks="true">
             <pod name="GCDWebServer" spec="~> 3.0" />
