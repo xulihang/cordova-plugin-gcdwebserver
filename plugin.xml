@@ -11,5 +11,10 @@
         </feature>
     </config-file>
     <source-file src="src/ios/GCDWebServer.m" />
+    <podspec>
+        <pods use-frameworks="true">
+            <pod name="GCDWebServer" spec="~> 3.0" />
+        </pods>
+    </podspec>
 </platform>
 </plugin>
