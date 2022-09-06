@@ -1,20 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-gcdwebserver" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
-<name>GCDWebServer</name>
-<js-module name="GCDWebServer" src="www/GCDWebServer.js">
-    <clobbers target="cordova.plugins.GCDWebServer" />
+<plugin id="cordova-plugin-gcdwebserver" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android"><name>GCDServer</name>
+<js-module name="GCDServer" src="www/GCDServer.js">
+<clobbers target="cordova.plugins.GCDServer" />
 </js-module>
 <platform name="ios">
-    <config-file parent="/*" target="config.xml">
-        <feature name="CDVGCDWebServer">
-        <param name="ios-package" value="CDVGCDWebServer" />
-        </feature>
-    </config-file>
-    <source-file src="src/ios/CDVGCDWebServer.m" />
-    <podspec>
-        <pods use-frameworks="true">
-            <pod name="GCDWebServer" spec="~> 3.0" />
-        </pods>
-    </podspec>
-</platform>
-</plugin>
+<config-file parent="/*" target="config.xml">
+<feature name="GCDServer">
+<param name="ios-package" value="GCDServer" />
+</feature></config-file>
+<source-file src="src/ios/GCDServer.m" />
+<podspec>
+    <pods use-frameworks="true">
+        <pod name="GCDWebServer" spec="~> 3.0" />
+    </pods>
+</podspec>
+</platform></plugin>

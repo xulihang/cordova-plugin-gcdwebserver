@@ -1,16 +1,15 @@
-/********* CDVGCDWebServer.m Cordova Plugin Implementation *******/
+/********* GCDServer.m Cordova Plugin Implementation *******/
 
 #import <Cordova/CDV.h>
-#import "GCDWebServer.h"
 
-@interface CDVGCDWebServer : CDVPlugin {
+@interface GCDServer : CDVPlugin {
   // Member variables go here.
 }
 
-- (void)startServer:(CDVInvokedUrlCommand*)command;
+- (void)coolMethod:(CDVInvokedUrlCommand*)command;
 @end
 
-@implementation CDVGCDWebServer
+@implementation GCDServer
 
 - (void)startServer:(CDVInvokedUrlCommand*)command
 {
@@ -21,5 +20,4 @@
 
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
-
 @end
