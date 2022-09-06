@@ -5,7 +5,9 @@
 
 @interface GCDServer : CDVPlugin
 @property (nonatomic, strong) GCDWebServer* webServer;
+@property int port;
 - (void)startServer:(CDVInvokedUrlCommand*)command;
+
 @end
 
 @implementation GCDServer
@@ -21,20 +23,26 @@
         if (dict[@"folder"] != nil) {
             folder = dict[@"folder"];
         }
-        int port = 8080;
+        _port = 8080;
         if (dict[@"port"] != nil) {
-            port = [dict[@"port"] intValue];
+            _port = [dict[@"port"] intValue];
         }
         NSBundle* mainBundle;
         // Get the main bundle for the app.
         mainBundle = [NSBundle mainBundle];
         NSString *path = [mainBundle pathForResource:folder ofType:nil];
         [_webServer addGETHandlerForBasePath:@"/" directoryPath:path indexFilename:nil cacheAge:3600 allowRangeRequests:YES];
-        [_webServer startWithPort:port bonjourName:nil];
+        [_webServer startWithPort:_port bonjourName:nil];
         NSLog(@"path: %@",path);
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"okay"];
     }else{
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"already running"];
+        bool running = [_webServer isRunning];
+        if (running == false) {
+            [_webServer startWithPort:_port bonjourName:nil];
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"restarted"];
+        }else{
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"already running"];
+        }
     }
     
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
