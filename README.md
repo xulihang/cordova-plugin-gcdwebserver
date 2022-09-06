@@ -1,4 +1,4 @@
-# cordova-plugin-dynamsoft-barcode-reader
+# cordova-plugin-gcdwebserver
 
 ![version](https://img.shields.io/npm/v/cordova-plugin-gcdwebserver.svg)
 

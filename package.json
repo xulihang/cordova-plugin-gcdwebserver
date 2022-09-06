@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-gcdwebserver",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Cordova plugin for GCDWebServer",
   "cordova": {
     "id": "cordova-plugin-gcdwebserver",
